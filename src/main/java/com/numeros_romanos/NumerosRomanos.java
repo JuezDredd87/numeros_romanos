@@ -7,12 +7,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class NumerosRomanos {
 
-    @GetMapping("/convertirARomanos")
-    public String convertirARomanos(@RequestParam(value = "numero", defaultValue = "") String numeroNaturalEntrada){
+    @GetMapping("/convertirARomanos/{numero}")
+    public String convertirARomanos(@RequestParam("numero") String numero){
         int numeroNatural;
 
         try {
-            numeroNatural = Integer.parseInt(numeroNaturalEntrada);
+            numeroNatural = Integer.parseInt(numero);
         } catch (Exception e){
                 return "Numero no soportado";
         }
