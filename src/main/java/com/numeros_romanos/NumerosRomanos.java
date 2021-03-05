@@ -46,7 +46,7 @@ public class NumerosRomanos {
 
         if (resto >= 900 && resto <= 999){
             resultado.append("CM");
-            resto -= 999;
+            resto -= 900;
         }
 
         return resultado.toString() + sumarD(resto);

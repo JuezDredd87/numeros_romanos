@@ -490,6 +490,13 @@ class NumerosRomanosApplicationTests {
     }
 
     @Test
+    public void pasar3999ARomanos(){
+        String romano = numerosRomanos.convertirARomanos(3999);
+
+        Assertions.assertEquals("MMMCMXCIX", romano);
+    }
+
+    @Test
     public void pasar4000ARomanos(){
         String romano = numerosRomanos.convertirARomanos(4000);
 
