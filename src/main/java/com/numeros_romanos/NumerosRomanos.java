@@ -9,10 +9,10 @@ public class NumerosRomanos {
 
     @GetMapping("/convertirARomanos")
     public String convertirARomanos(@RequestParam(value = "numero", defaultValue = "") String numeroNaturalEntrada){
-        int numeroNatural = 0;
+        int numeroNatural;
 
         try {
-            numeroNatural = Integer.valueOf(numeroNaturalEntrada);
+            numeroNatural = Integer.parseInt(numeroNaturalEntrada);
         } catch (Exception e){
                 return "Numero no soportado";
         }
