@@ -33,7 +33,7 @@ public class NumerosRomanos {
         int resto = numeroNatural;
         int contadorM = 0;
 
-        for (int i = 1000; i <= numeroNatural && i<=3000; i+=1000){
+        for (int i = 1000; i <= numeroNatural; i+=1000){
             resto -= 1000;
             resultado.append("M");
             contadorM++;
@@ -43,6 +43,11 @@ public class NumerosRomanos {
             return "Numero no soportado";
         }
 
+
+        if (resto >= 900 && resto <= 999){
+            resultado.append("CM");
+            resto -= 999;
+        }
 
         return resultado.toString() + sumarD(resto);
     }

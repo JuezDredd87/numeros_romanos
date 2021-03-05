@@ -462,6 +462,20 @@ class NumerosRomanosApplicationTests {
     }
 
     @Test
+    public void pasar2000ARomanos(){
+        String romano = numerosRomanos.convertirARomanos(2000);
+
+        Assertions.assertEquals("MM", romano);
+    }
+
+    @Test
+    public void pasar3000ARomanos(){
+        String romano = numerosRomanos.convertirARomanos(3000);
+
+        Assertions.assertEquals("MMM", romano);
+    }
+
+    @Test
     public void pasar3888ARomanos(){
         String romano = numerosRomanos.convertirARomanos(3888);
 
@@ -473,5 +487,12 @@ class NumerosRomanosApplicationTests {
         String romano = numerosRomanos.convertirARomanos(3889);
 
         Assertions.assertEquals("MMMDCCCLXXXIX", romano);
+    }
+
+    @Test
+    public void pasar4000ARomanos(){
+        String romano = numerosRomanos.convertirARomanos(4000);
+
+        Assertions.assertEquals("Numero no soportado", romano);
     }
 }
