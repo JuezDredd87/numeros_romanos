@@ -12,11 +12,37 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.*;
 
 @SpringBootTest
 class NumerosRomanosApplicationTests {
 
     private final NumerosRomanos numerosRomanos = new NumerosRomanos();
+    // mock creation
+    List mockedList = mock(List.class);
+    NumerosRomanos mockedNumerosRomanos = mock(NumerosRomanos.class);
+
+
+    @Test
+    void mockList(){
+        // using mock object - it does not throw any "unexpected interaction" exception
+        mockedList.add("one");
+        mockedList.clear();
+
+        // selective, explicit, highly readable verification
+        verify(mockedList).add("one");
+        verify(mockedList).clear();
+    }
+
+    @Test
+    void mockNumerosRomanos(){
+        verify(mockedNumerosRomanos);
+    }
+
+    @Test
+    void setMockedNumerosRomanos1(){
+        when(mockedNumerosRomanos.convertirARomanos(1)).thenReturn("I");
+    }
 
     @Test
     void contextLoads() {
