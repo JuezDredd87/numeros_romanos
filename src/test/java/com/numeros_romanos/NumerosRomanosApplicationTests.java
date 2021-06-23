@@ -35,11 +35,6 @@ class NumerosRomanosApplicationTests {
     }
 
     @Test
-    void mockNumerosRomanos(){
-        verify(mockedNumerosRomanos);
-    }
-
-    @Test
     void setMockedNumerosRomanos1(){
         when(mockedNumerosRomanos.convertirARomanos(1)).thenReturn("I");
     }
